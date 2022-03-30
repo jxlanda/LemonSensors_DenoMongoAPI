@@ -1,0 +1,1297 @@
+<!--
+ API Documentation HTML Template  - 1.0.1
+ Copyright © 2016 Florian Nicolas
+ Licensed under the MIT license.
+ https://github.com/ticlekiwi/API-Documentation-HTML-Template
+ !-->
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Deno-mongodb - Documentación</title>
+    <meta name="description" content="">
+    <meta name="author" content="ticlekiwi">
+
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/hightlightjs-dark.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500|Source+Code+Pro:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" media="all">
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<div class="left-menu">
+    <div class="content-logo">
+        <img alt="nombre" title="titulo" src="images/logo.png" height="32" />
+        <span>Documentación API</span>
+    </div>
+    <div class="content-menu">
+        <ul>
+            <li class="scroll-to-link active" data-target="get-started">
+                <a style="margin-left: 20px;">Empezar</a>
+            </li>
+            <li>
+                <p>Usuarios</p>
+            </li>
+            <li class="scroll-to-link" data-target="get-characters">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="post">POST</label>
+                    </div>
+                    <div>
+                        <a>Crear usuario</a>
+                    </div>
+                </div>
+            </li>
+            <li class="scroll-to-link" data-target="get-singleuser">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="get">GET</label>
+                    </div>
+                    <div>
+                        <a>Consultar usuario</a>
+                    </div>
+                </div>
+            </li>
+            <li class="scroll-to-link" data-target="get-users">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="get">GET</label>
+                    </div>
+                    <div>
+                        <a>Consultar usuarios</a>
+                    </div>
+                </div>
+            </li>
+            <li class="scroll-to-link" data-target="get-modifuser">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="put">PUT</label>
+                    </div>
+                    <div>
+                        <a>Actualizar usuario</a>
+                    </div>
+                </div>
+            </li>
+            <li class="scroll-to-link" data-target="get-deletuser">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="del">DEL</label>
+                    </div>
+                    <div>
+                        <a>Eliminar usuario</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>Sensores</p>
+            </li>
+            <li class="scroll-to-link" data-target="get-createsensor">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="post">POST</label>
+                    </div>
+                    <div>
+                        <a>Crear Sensor</a>
+                    </div>
+                </div>
+            </li>
+            <li class="scroll-to-link" data-target="get-consultsensor">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="get">GET</label>
+                    </div>
+                    <div>
+                        <a>Consultar Sensor</a>
+                    </div>
+                </div>
+            </li>   
+            <li class="scroll-to-link" data-target="get-getallsensors">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="get">GET</label>
+                    </div>
+                    <div>
+                        <a>Consultar Sensores</a>
+                    </div>
+                </div>
+            </li> 
+            <li class="scroll-to-link" data-target="get-modifsensor">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="put">PUT</label>
+                    </div>
+                    <div>
+                        <a>Actualizar Sensor</a>
+                    </div>
+                </div>
+            </li>  
+            <li class="scroll-to-link" data-target="get-deletsensor">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="del">DEL</label>
+                    </div>
+                    <div>
+                        <a>Eliminar Sensor</a>
+                    </div>
+                </div>
+            </li>  
+
+
+            <li>
+                <p>Historial</p>
+            </li>
+            <li class="scroll-to-link" data-target="post-historysensor">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="post">POST</label>
+                    </div>
+                    <div>
+                        <a>Crear Historial</a>
+                    </div>
+                </div>
+            </li>  
+            <li class="scroll-to-link" data-target="get-allhistory">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="get">GET</label>
+                    </div>
+                    <div>
+                        <a>Consultar Historial</a>
+                    </div>
+                </div>
+            </li>  
+            <li class="scroll-to-link" data-target="get-historybydaterange">
+                <div style="display: flex;">
+                    <div style="width: 48px; text-align: end;">
+                        <label class="post">POST</label>
+                    </div>
+                    <div>
+                        <a>Consultar Historial por fechas</a>
+                    </div>
+                </div>
+            </li>  
+            
+
+        </ul>
+    </div>
+</div>
+<div class="content-page">
+    <div class="content-code"></div>
+    <div class="content">
+        <div class="overflow-hidden content-section" id="content-get-started">
+            <h1 id="get-started">Empezar</h1>
+            <pre>
+API Endpoint
+
+https://deno-mongodb.herokuapp.com/
+                </pre>
+            <p>
+                La API Deno-mongodb proporciona acceso programático para conectarse con la base de datos de MongoDB Atlas
+                creada específicamente para el proyecto LemonSensors.
+            </p> 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Logo</th>
+                            <th>Nombre</th>
+                            <th>Desarrollador(s)</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>
+                            <img alt="nombre" title="titulo" src="images/ls-icon.png" height="60" />
+                        </td>
+                        <td>
+                            LemonSensors
+                        </td>
+                        <td>
+                            José Luis Cuevas<br>
+                            Luis Eduardo Fierro
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <pre>
+Authorization
+                                        
+Bearer eyJhbGciOi...2EAnXhsweySJo
+                </pre>
+                <h4>JSON Web Token</h4>
+                <p>
+                    Cada una de las rutas necesita de un Bearer Token como autorización en la cabecera de la petición.
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Cabecera</th>
+                            <th>Valor</th>
+                            <th>Descripción</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Authorization</td>
+                            <td>Bearer</td>
+                            <td>Token generado por la aplicación cuando se inicia sesión</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </p>
+        </div>
+        <div class="overflow-hidden content-section" id="content-get-characters">
+            <h2 id="get-characters">Crear usuario</h2>
+            <pre>
+                <code class="json">
+Mensaje:
+
+{
+    "name": "Jose Luis Cuevas",
+    "username": "jxlambda",
+    "email": "jose.cuevas@tectijuana.edu.mx",
+    "password": "1234",
+    "tokenfcm": "",
+    "role": {
+        "id": 0,
+        "name": "Administrador"
+    }
+}
+                </code>
+            </pre>
+            <p>
+                Para crear un usuario se debe realizar una petición POST a la siguiente ruta:
+                <code class="higlighted">user/create</code><br>
+                Si el usuario se creo correctamente devolvera el id ($oid) del usuario como respuesta.
+            </p>
+            <br>
+            <pre>
+                <code class="json">
+Respuesta:
+
+{
+    "$oid": "5f9f9ff700d8ebd500bb9724"
+}
+                </code>
+            </pre>
+            <h4>Cuerpo de la petición</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>String</td>
+                    <td>Nombre completo</td>
+                </tr>
+                <tr>
+                    <td>username</td>
+                    <td>String</td>
+                    <td>Apodo o nombre de usuario</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Correo electrónico</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td>String</td>
+                    <td>Contraseña en texto plano del usuario</td>
+                </tr>
+                <tr>
+                    <td>tokenfcm</td>
+                    <td>String</td>
+                    <td>Token utilizado para enviar Web Push Notifications</td>
+                </tr>
+                <tr>
+                    <td>role</td>
+                    <td>Role</td>
+                    <td>Rol o tipo de usuario</td>
+                </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td style="text-align: right;">id</td>
+                        <td>Number</td>
+                        <td>Identificador del tipo de usuario o rol</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">name</td>
+                        <td>String</td>
+                        <td>Nombre del tipo de usuario o rol</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    <!-- CONSULTAR USUARIO ESPECIFICO-->
+
+        <div class="overflow-hidden content-section" id="content-get-singleuser">
+            <h2 id="get-singleuser">Consultar usuario</h2>
+            <p>
+                Para consultar a un usuario especifico se debe realizar una petición GET a la siguiente ruta:
+                <code class="higlighted">user/:id</code> <br>
+                Es necesario enviar el id del usuario a buscar como parametros de ruta.
+                Si el id coincide con algún usuario existente regresara los datos de dicho usuario en la respuesta.
+            </p>    
+            <pre>
+                
+                <code class="json">
+    Respuesta:
+    {
+    "_id": {
+        "$oid": "5f9fc7e7007e4d710026cb3f"
+    },
+    "name": "Luis Eduardo Fierro Lopez",
+    "username": "FILL16Z",
+    "email": "luis.fierro16@tectijuana.edu.mx",
+    "password": "$2a$10$X8fC4U8a/cIYlFk1ZxS90uzI5x1RiW6iWXmkrXFJ1eKIr9tA5WlU.",
+    "tokenfcm": "",
+    "role": {
+        "id": 1,
+        "name": "Administrador"
+    }
+    }
+                </code>
+            </pre>
+            <br>
+            <h4>Parámetros</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                    <th>Descripción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>Es el identificador del usuario ($oid)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- CONSULTAR USUARIOS USUARIO -->
+
+        <div class="overflow-hidden content-section" id="content-get-users">
+            <h2 id="get-users">Consultar usuarios</h2>
+            <pre>
+                <code class="json">
+Respuesta:
+
+[
+    {
+        "_id": {
+            "$oid": "5f9fc7e7007e4d710026cb3f"
+        },
+        "name": "Luis Eduardo Fierro Lopez",
+        "username": "FILL16Z",
+        "email": "luis.fierro16@tectijuana.edu.mx",
+        "password": "$2a$10$X8fC4U8a/cIYlFk1ZxS90uzI5x1RiW6iWXmkrXFJ1eKIr9tA5WlU.",
+        "tokenfcm": "",
+        "role": {
+            "id": 1,
+            "name": "Administrador"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fa0bc0700bdae6c00317ac0"
+        },
+        "name": "Jose Luis Cuevas",
+        "username": "jxlambda",
+        "email": "jose.cuevas@tectijuana.edu.mx",
+        "password": "$2a$10$jZ9jScoxcYCqBW6cV0jVhOC6/DndIQ2.q7bPSuiZ9W1fmbRiTgU9C",
+        "tokenfcm": "",
+        "role": {
+            "id": 0,
+            "name": "Administrador"
+        }
+    }
+]
+                </code>
+                </pre>
+            <p>
+                Para consultar a todos los usuarios registrados en la base de datos se debe realizar una petición GET a la siguiente ruta:
+                <code class="higlighted">users</code>
+                <br>
+                Si existen usuarios registrados en la base de datos se devolvera un array con los resultados. <br>
+            </p>    
+        </div>
+
+
+        <!-- ACTUALIZAR USUARIO -->
+
+        <div class="overflow-hidden content-section" id="content-get-modifuser">
+            <h2 id="get-modifuser">Actualizar usuario</h2>
+            <pre>
+                <code class="json">
+Mensaje:
+{
+    "name": "Luis  Fierro ",
+    "username": "pelusin",
+    "email": "luis.fierro@tectijuana.edu.mx",
+    "password": "1234",
+    "tokenfcm": "",
+    "role": {
+        "id": 1,
+        "name": "Administrador"
+    }
+}
+                </code>
+                </pre>
+            <p>
+                Para modificar a un usuario se debe realizar una petición PUT a la siguiente ruta:
+                <code class="higlighted">user/:id</code> <br>
+                Si el usuario se modifico correctamente se enviará como respuesta un mensaje indicando el exito de la operación.
+            </p>    
+            <pre>
+                
+                <code class="json">
+Respuesta:
+{
+    "message": "User updated successfully!"
+}
+                </code>
+            </pre>
+            <br>
+            <h4>Cuerpo de la petición </h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>String</td>
+                    <td>Nombre completo</td>
+                </tr>
+                <tr>
+                    <td>usermane</td>
+                    <td>String</td>
+                    <td>Apodo o nombre de usuario</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>String</td>
+                    <td>Correo electrónico</td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td>String</td>
+                    <td>Contraseña en texto plano del usuario</td>
+                </tr>
+                <tr>
+                    <td>tokenfcm</td>
+                    <td>String</td>
+                    <td>Token utilizado para enviar Web Push notifications</td>
+                </tr>
+                <tr>
+                    <td>role</td>
+                    <td>Role</td>
+                    <td>Rol o tipo de usuario</td>
+                </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td style="text-align: right;">id</td>
+                        <td>Number</td>
+                        <td>Identificador del tipo de usuario o rol</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">name</td>
+                        <td>String</td>
+                        <td>Nombre del tipo de usuario o rol</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>   
+            <h4>Parámetros</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                    <th>Descripción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>Es el identificador del usuario ($oid)</td>
+                </tr>
+                </tbody>
+            </table>      
+        </div>
+
+        <!-- ELIMINAR USUARIO -->
+
+        <div class="overflow-hidden content-section" id="content-get-deletuser">
+            <h2 id="get-deletuser">Eliminar usuario</h2>
+            <pre>
+                <code class="json">
+
+
+                </code>
+                </pre>
+            <p>
+                Para elminiar a un usuario se debe realizar una petición DELETE a la siguiente ruta:
+                <code class="higlighted">user/:id</code> <br>
+                Es necesario enviar el id del usuario a buscar como parametros de ruta.
+                Si el usuario se eliminó correctamente se enviará como respuesta un mensaje indicando el exito de la operación.
+            </p>    
+            <pre>
+                
+                <code class="json">
+Respuesta:
+{
+    "message": "User deleted successfully!"
+}
+                </code>
+            </pre>
+            <br>
+            <h4>Parámetros</h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Valor</th>
+                    <th>Descripción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>Es el identificador del usuario ($oid)</td>
+                </tr>
+                </tbody>
+            </table>
+            
+        </div>
+
+        
+        <!-- CREAR SENSOR -->
+
+        <div class="overflow-hidden content-section" id="content-get-createsensor">
+            <h2 id="get-createsensor">Crear Sensor</h2>
+            <pre>
+                <code class="json">
+Mensaje:
+{
+    "name": "Sensor LDR",
+    "manufacturer": "Electrocrea",
+    "modelname": "LDR",
+    "category": "Luz",
+    "measurement": "Porcentaje",
+    "minvoltage": 3,
+    "maxvoltage": 5,
+    "sensedinseconds": 2,
+    "storageplace": "Planta1-Caja2",
+    "config": {
+        "sensinginseconds": 5,
+        "minvalue": 0,
+        "maxvlaue": 45
+    }
+}
+                </code>
+                </pre>
+            <p>
+                Para crear un sensor se debe realizar una petición POST a la siguiente ruta:<br>
+                <code class="higlighted">sensor/create</code> <br>
+                Si el sensor se creo correctamente devolvera el id ($oid) del sensor como respuesta.
+            </p>    
+            <pre>
+                
+                <code class="json">
+Respuesta:
+{
+    "$oid": "5fb08cd6004767c1009993d7"
+}
+                </code>
+            </pre>
+            <br>
+            <h4>Cuerpo de la petición </h4>
+            <table>
+                <thead>
+                <tr>
+                    <th>Campo</th>
+                    <th>Tipo</th>
+                    <th>Descripción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>String</td>
+                    <td>Nombre completo</td>
+                </tr>
+                <tr>
+                    <td>manufacturer</td>
+                    <td>String</td>
+                    <td>Fabricante</td>
+                </tr>
+                <tr>
+                    <td>modelname</td>
+                    <td>String</td>
+                    <td>Nombre del modelo</td>
+                </tr>
+                <tr>
+                    <td>category</td>
+                    <td>String</td>
+                    <td>Categoría</td>
+                </tr>
+                <tr>
+                    <td>measurement</td>
+                    <td>String</td>
+                    <td>Unidad de medición</td>
+                </tr>
+                <tr>
+                    <td>minvoltage</td>
+                    <td>Number</td>
+                    <td>Voltage mínimo</td>
+                </tr>
+                <tr>
+                    <td>maxvoltage</td>
+                    <td>Number</td>
+                    <td>voltage máximo</td>
+                </tr>
+                <tr>
+                    <td>sensedinseconds</td>
+                    <td>Number</td>
+                    <td>Tiempo de sensado</td>
+                </tr>
+                <tr>
+                    <td>storageplace</td>
+                    <td>String</td>
+                    <td>Almacén</td>
+                </tr>
+                <tr>
+                    <td>config</td>
+                    <td>int</td>
+                    <td>Configuración</td>
+                </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>sensinginseconds</td>
+                        <td>Number</td>
+                        <td>Monitoreo en segundo</td>
+                    </tr>
+                    <tr>
+                        <td>minvalue</td>
+                        <td>Numbre</td>
+                        <td>Valor mínimo</td>
+                    </tr>
+                    <tr>
+                        <td>maxvlaue</td>
+                        <td>Number</td>
+                        <td>Valor máximo</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>         
+        </div>
+<!-- CONSULTAR SENSOR -->
+<div class="overflow-hidden content-section" id="content-get-consultsensor">
+    <h2 id="get-consultsensor">Consultar Sensor</h2>
+    <pre>
+
+        </pre>
+    <p>
+        Para consultar a un usuario especifico se debe realizar una petición PUT a la siguiente ruta: 
+        <code class="higlighted">sensor/:id</code> <br>
+        Si el sensor se modifico correctamente se enviará como respuesta un mensaje indicando el exito de la operación.
+    </p>    
+    <pre>
+        
+        <code class="json">
+Respuesta:
+{
+    "_id": {
+        "$oid": "5fb08cd6004767c1009993d7"
+    },
+    "name": "Sensor LDR",
+    "manufacturer": "Electrocrea",
+    "modelname": "LDR",
+    "category": "Luz",
+    "measurement": "Porcentaje",
+    "minvoltage": 3,
+    "maxvoltage": 5,
+    "sensedinseconds": 2,
+    "storageplace": "Planta1-Caja2",
+    "config": {
+        "sensinginseconds": 5,
+        "minvalue": 0,
+        "maxvlaue": 45
+    }
+}
+        </code>
+    </pre>
+    <br>
+    <h4>Párametros</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Campo</th>
+            <th>Valor</th>
+            <th>Descripción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>Es el identificador del sensor($oid)</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>  
+</div>
+
+<!-- CONSULTAR SENSORES -->
+
+<div class="overflow-hidden content-section" id="content-get-getallsensors">
+    <h2 id="get-getallsensors">Consultar Sensores</h2>
+    <pre>
+        <code class="json">
+Respuesta:
+[
+    {
+        "_id": {
+            "$oid": "5fb0537500a7f8a6002e2c64"
+        },
+        "name": "Sensor Dht11",
+        "manufacturer": "Electrocrea",
+        "modelname": "DHT11",
+        "category": "Humedad",
+        "measurement": "Porcentaje",
+        "minvoltage": 3,
+        "maxvoltage": 5,
+        "sensedinseconds": 2,
+        "storageplace": "Planta1-Caja2",
+        "config": {
+            "sensinginseconds": 5,
+            "minvalue": 0,
+            "maxvlaue": 45
+        }
+    },
+    {
+        "_id": {
+            "$oid": "5fb0a9ca005dd03d00178424"
+        },
+        "name": "Sensor LDR",
+        "manufacturer": "Electrocrea",
+        "modelname": "LDR",
+        "category": "Luz",
+        "measurement": "Porcentaje",
+        "minvoltage": 3,
+        "maxvoltage": 5,
+        "sensedinseconds": 2,
+        "storageplace": "Planta1-Caja2",
+        "config": {
+            "sensinginseconds": 5,
+            "minvalue": 0,
+            "maxvlaue": 45
+        }
+    }
+]
+        </code>
+        </pre>
+    <p>
+        Para consultar a todos los sensores registrados en la base de datos se debe realizar una petición GET a la siguiente ruta:
+        <code class="higlighted">sensors</code> 
+        Si existen sensores registrados en la base de datos se devolvera un array con los resultados.
+    </p>    
+</div>
+
+<!-- ACTUALIZAR SENSOR -->
+
+<div class="overflow-hidden content-section" id="content-get-modifsensor">
+    <h2 id="get-modifsensor">Actualizar Sensor</h2>
+    <pre>
+        <code class="json">
+Mensaje:
+{
+"name": "Sensor LDR",
+"manufacturer": "Electrocrea",
+"modelname": "LDR",
+"category": "Luz",
+"measurement": "Porcentaje",
+"minvoltage": 3,
+"maxvoltage": 5,
+"sensedinseconds": 2,
+"storageplace": "Planta1-Caja2",
+"config": {
+"sensinginseconds": 5,
+"minvalue": 0,
+"maxvlaue": 45
+}
+}
+        </code>
+        </pre>
+    <p>
+        Para modificar a un usuario se debe realizar una petición PUT a la siguiente ruta:
+        <code class="higlighted">sensor/:id</code> <br>
+        Si el sensor se creo correctamente devolvera el id ($oid) del sensor como respuesta.
+    </p>    
+    <pre>
+        
+        <code class="json">
+Respuesta:
+{
+    "message": "Sensor updated successfully!"
+}
+        </code>
+    </pre>
+    <br>
+    <h4>Cuerpo de la petición </h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Campo</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>name</td>
+            <td>String</td>
+            <td>Nombre completo</td>
+        </tr>
+        <tr>
+            <td>manufacturer</td>
+            <td>String</td>
+            <td>Fabricante</td>
+        </tr>
+        <tr>
+            <td>modelname</td>
+            <td>String</td>
+            <td>Nombre del modelo</td>
+        </tr>
+        <tr>
+            <td>category</td>
+            <td>String</td>
+            <td>Categoría</td>
+        </tr>
+        <tr>
+            <td>measurement</td>
+            <td>String</td>
+            <td>Unidad de medición</td>
+        </tr>
+        <tr>
+            <td>minvoltage</td>
+            <td>Number</td>
+            <td>Voltage mínimo</td>
+        </tr>
+        <tr>
+            <td>maxvoltage</td>
+            <td>Number</td>
+            <td>voltage máximo</td>
+        </tr>
+        <tr>
+            <td>sensedinseconds</td>
+            <td>Number</td>
+            <td>Tiempo de sensado</td>
+        </tr>
+        <tr>
+            <td>storageplace</td>
+            <td>String</td>
+            <td>Almacén</td>
+        </tr>
+        <tr>
+            <td>config</td>
+            <td>int</td>
+            <td>Configuración</td>
+        </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td>sensinginseconds</td>
+                <td>Number</td>
+                <td>Monitoreo en segundo</td>
+            </tr>
+            <tr>
+                <td>minvalue</td>
+                <td>Numbre</td>
+                <td>Valor mínimo</td>
+            </tr>
+            <tr>
+                <td>maxvlaue</td>
+                <td>Number</td>
+                <td>Valor máximo</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>   
+    <h4>Párametros</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Campo</th>
+            <th>Valor</th>
+            <th>Descripción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>Es el identificador del sensor($oid)</td>
+        </tr>
+        </tbody>
+    </table>      
+</div>
+
+<!-- ELIMINAR SENSOR -->
+
+<div class="overflow-hidden content-section" id="content-get-deletsensor">
+    <h2 id="get-deletsensor">Eliminar Sensor</h2>
+    <pre>
+        <code class="json">
+
+
+        </code>
+        </pre>
+    <p>
+        Para elmininr a un sensor se debe realizar una petición DELETE a la siguiente ruta:
+        <code class="higlighted">sensor/:id</code> <br>
+        Es necesario enviar el id del sensor a buscar como parametros de ruta. Si el sensor se eliminó correctamente se enviará como respuesta un mensaje indicando el exito de la operación.
+    </p>    
+    <pre>
+        
+        <code class="json">
+Respuesta:
+{
+"message": "User deleted successfully!"
+}
+        </code>
+    </pre>
+    <br>   
+    <h4>Párametros</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Campo</th>
+            <th>Valor</th>
+            <th>Descripción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>String</td>
+            <td>Es el identificador del sensor($oid)</td>
+        </tr>
+        </tbody>
+    </table>
+    <br> 
+</div>
+
+<div class="overflow-hidden content-section" id="content-post-history">
+    <h2 id="post-historysensor">Crear Historial</h2>
+    <pre>
+        <code class="json">
+Mensaje:
+{
+    "sensor": {
+        "id": "5fd684a300eded4d0050e620",
+        "name": "DHT11-T",
+        "model": "ARD-360",
+        "measurement": "°C",
+        "storageplace": "home",
+        "sensinginseconds": 60,
+        "minvalue": 10,
+        "maxvalue": 20
+    },
+    "user": {
+        "id": "5fbb25b2002f521c0081caf7",
+        "username": "stever",
+        "email": "steve@gmail.com",
+        "imgurl": "https://pkimgcdn.peekyou.com/2c78301d12041282fb4f50b52171f9e8.jpeg"
+    },
+    "value": 16,
+    "datetime": "12-11-2020",
+    "isEvent": 0
+}
+        </code>
+        </pre>
+    <p>
+        Para crear o guardar el sensado se debe realizar una petición POST a la siguiente ruta:<br>
+        <code class="higlighted">history/create</code> <br>
+        Si el sensado o historial se creo correctamente devolvera el id ($oid) del historial como respuesta.
+    </p>    
+    <pre>
+        
+        <code class="json">
+Respuesta:
+{
+"$oid": "5fb08cd6kdi344jdf9993d7"
+}
+        </code>
+    </pre>
+    <br>
+    <h4>Cuerpo de la petición </h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Campo</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>sensor</td>
+            <td>Sensor</td>
+            <td>Datos mínimos del sensor</td>
+        </tr>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>String</td>
+                <td>Id ($oid) del sensor</td>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>String</td>
+                <td>Nombre del sensor</td>
+            </tr>
+            <tr>
+                <td>model</td>
+                <td>String</td>
+                <td>Modelo del sensor</td>
+            </tr>
+            <tr>
+                <td>measurement</td>
+                <td>String</td>
+                <td>Símbolo de medición</td>
+            </tr>
+            <tr>
+                <td>storageplace</td>
+                <td>String</td>
+                <td>Lugar o ubicación del sensor</td>
+            </tr>
+            <tr>
+                <td>sensinginseconds</td>
+                <td>Number</td>
+                <td>Número de segundos en los que se esta sensando</td>
+            </tr>
+            <tr>
+                <td>maxvalue</td>
+                <td>Number</td>
+                <td>Valor máximo de sensado</td>
+            </tr>
+            <tr>
+                <td>minvalue</td>
+                <td>Number</td>
+                <td>Valor mínimo de sensado</td>
+            </tr>
+        </tbody>
+        <tr>
+            <td>user</td>
+            <td>User</td>
+            <td>Usuario del sensor</td>
+        </tr>
+        <tbody>
+            <tr>
+                <td>id</td>
+                <td>String</td>
+                <td>Id ($oid) del usuario</td>
+            </tr>
+            <tr>
+                <td>username</td>
+                <td>String</td>
+                <td>Nombre de usuario</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>String</td>
+                <td>Correo del usuario</td>
+            </tr>
+            <tr>
+                <td>imgurl</td>
+                <td>String</td>
+                <td>Url del avatar del usuario</td>
+            </tr>
+            
+        </tbody>
+        <tr>
+            <td>value</td>
+            <td>Number</td>
+            <td>Valor sensado</td>
+        </tr>
+        <tr>
+            <td>datetime</td>
+            <td>Date</td>
+            <td>Fecha y hora del sensado</td>
+        </tr>
+        <tr>
+            <td>isEvent</td>
+            <td>Boolean</td>
+            <td>Es una alerta o una lectura normal</td>
+        </tr>
+    </table>
+    <br>         
+</div>
+
+<!-- CONSULTAR HISTORIAL -->
+<div class="overflow-hidden content-section" id="content-get-allhistory">
+    <h2 id="get-allhistory">Consultar Historial</h2>
+    <pre>
+        <code class="json">
+Respuesta:
+{
+    "_id": {
+        "$oid": "5ffad2d20027d1fd009e6aef"
+    },
+    "sensor": {
+        "id": "sfsdf",
+        "name": "fsf",
+        "modelname": "sfsdf"
+    },
+    "value": 15,
+    "datetime": "2021-01-10T00:00:00.000Z",
+    "isEvent": true
+},
+{
+    "_id": {
+        "$oid": "5ffadc4100c963a300af2343"
+    },
+    "sensor": {
+        "id": "sfsdf",
+        "name": "fsf",
+        "modelname": "sfsdf"
+    },
+    "value": 15,
+    "datetime": "2021-01-20T00:00:00.000Z",
+    "isEvent": true
+},
+{
+    "_id": {
+        "$oid": "5ffbd86900af1dbb00c150fd"
+    },
+    "sensor": {
+        "id": "sfsdf",
+        "name": "Ejemplo",
+        "modelname": "sfsdf"
+    },
+    "value": 16,
+    "datetime": "2021-01-11T04:47:37.287Z",
+    "isEvent": false
+},
+{
+    "_id": {
+        "$oid": "5ffbd9be009e7a5c00c150fe"
+    },
+    "sensor": {
+        "id": "sfsdf",
+        "name": "Ejemplo",
+        "modelname": "sfsdf"
+    },
+    "value": 16,
+    "datetime": "2021-01-11T04:53:18.267Z",
+    "isEvent": false
+}
+        </code>
+    </pre>
+    <p>
+        Para consultar el historial se debe realizar una petición GET a la siguiente ruta: 
+        <code class="higlighted">history</code> <br>
+        Se devolvera como respuesta el siguente formato JSON.
+    </p>    
+</div>
+<!-- Consultar historial por fechas-->
+<div class="overflow-hidden content-section" id="content-get-consultrangehistory">
+    <h2 id="get-historybydaterange">Consultar Historial por fechas</h2>
+    <pre>
+        <code class="json">
+Mensaje:
+{
+    "from": "2020-01-01",
+    "to": "2020-01-10",
+    "sensorid": "5fd684a300eded4d0050e620"
+}
+        </code>
+        </pre>
+    <p>
+        Para consultar el historial en un rango de fechas se debe realizar una petición POST a la siguiente ruta: 
+        <code class="higlighted">history/range</code> <br>
+        Si se encuentran coincidencias se enviará como respuesta los registros encontrados.
+    </p>    
+    <pre>
+        
+        <code class="json">
+Respuesta:
+[
+    {
+        "_id": {
+            "$oid": "5ffad2d20027d1fd009e6aef"
+        },
+        "sensor": {
+            "id": "sfsdf",
+            "name": "fsf",
+            "modelname": "sfsdf"
+        },
+        "value": 15,
+        "datetime": "2021-01-10T00:00:00.000Z",
+        "isEvent": true,
+        "date": "2021-01-10"
+    }
+]
+        </code>
+    </pre>
+    <br>
+    <h4>Cuerpo de la petición</h4>
+    <table>
+        <thead>
+        <tr>
+            <th>Campo</th>
+            <th>Valor</th>
+            <th>Descripción</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>from</td>
+            <td>Date</td>
+            <td>Es la fecha de inicio</td>
+        </tr>
+        <tr>
+            <td>to</td>
+            <td>Date</td>
+            <td>Es la fecha de fin</td>
+        </tr>
+        <tr>
+            <td>sensorid</td>
+            <td>String</td>
+            <td>Es el id ($oid) del sensor</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>  
+</div>
+</div>
+</div>
+<a href="https://github.com" class="github-corner" aria-label="View source on Github" title="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="z-index:99999; fill:#70B7FD; color:#fff; position: fixed; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<script src="js/script.js"></script>
+</body>
+</html>
