@@ -15,7 +15,7 @@ Consiste en una plataforma de monitoreo y control en tiempo real que enviará no
  * Humedad y temperatura
  * Iluminación
 
-## Documentación del API
+## :mag: Documentación del API
 https://deno-mongodb.herokuapp.com/
 
 ## :pushpin: Arquitectura general del proyecto
